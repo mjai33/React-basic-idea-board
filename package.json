@@ -1,5 +1,5 @@
 {
-  "name": "react-idea-board",
+  "name": "react-basic-dea-board",
   "version": "1.0.0",
   "description": "An idea board to create new ideas and edit/delete existing ideas.",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "react-idea-board"
+    "url": "react-basic-idea-board"
   },
   "author": "Mohit Jain",
   "license": "ISC",
