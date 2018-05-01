@@ -45,8 +45,8 @@ export default class IdeaList extends Component {
 		)
 	}
 	render() {
-		var ideaArray = this.props.entries;
-		var listItems = ideaArray.map(this.createIdea);
+		let ideaArray = this.props.entries;
+		let listItems = ideaArray.map(this.createIdea);
 
 		return(
 			<ul className='ideaList'>

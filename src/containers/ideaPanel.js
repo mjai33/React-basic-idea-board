@@ -21,16 +21,17 @@ export default class IdeaPanel extends Component {
 		this.sortByDate = this.sortByDate.bind(this);
 	}
 	addNew(e) {
-		let ideaArray = this.state.entries;
+		let entries = [...this.state.entries]; // spread operator , copy of state before changing it because of performance reasons
+		// let ideaArray = this.state.entries;
 		
-		ideaArray.push({
+		entries.push({
 			title: '',
 			desc: '',
 			key: Date.now()
 		})
 
 		this.setState({
-			entries: ideaArray,
+			entries,
 			hasListUpdated: true
 		})
 
@@ -42,12 +43,13 @@ export default class IdeaPanel extends Component {
 
 	}
 	clearIdea(key) {
-		var newIdeaArray = this.state.entries.filter(function(item){
+		let entries = [...this.state.entries];
+		entries.filter(function(item){
 			return (item.key !== key);
 		})
 
 		this.setState({
-			entries: newIdeaArray,
+			entries,
 			hasListUpdated: true
 		})
 
@@ -70,9 +72,9 @@ export default class IdeaPanel extends Component {
 		}, 500);
 	}
 	sortByAlphabet() {
-		var arr = this.state.entries;
-		arr.sort(function(a, b) {
-			var ideaA = a.title.toLowerCase(),
+		let entries = [...this.state.entries];
+		entries.sort(function(a, b) {
+			let ideaA = a.title.toLowerCase(),
 				ideaB = b.title.toLowerCase();
 
 			if(ideaA < ideaB) {
@@ -84,13 +86,13 @@ export default class IdeaPanel extends Component {
 			return 0;
 		})
 		this.setState({
-			entries: arr
+			entries
 		})
 	}
 	sortByDate() {
-		var arr = this.state.entries;
+		let arr = this.state.entries;
 		arr.sort(function(a, b) {
-			var ideaA = a.key,
+			let ideaA = a.key,
 				ideaB = b.key;
 
 			if(ideaA < ideaB) {
