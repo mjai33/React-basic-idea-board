@@ -63,9 +63,8 @@ export default class IdeaPanel extends Component {
 			hasListUpdated: true
 		})
 
-		var self = this;
-		setTimeout(function(){
-			self.setState({
+		setTimeout(() =>{
+			this.setState({
 				hasListUpdated: false
 			})
 		}, 500);
