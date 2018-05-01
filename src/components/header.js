@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-export default class Header extends Component {
-	render() {
-		return <h1 className='header'>Idea Board</h1>
-	}
+// Stateless functional compoenents
+const Header = (props) => {
+	return <h1 className='header'>Idea Board</h1>
 }
+export default Header;
